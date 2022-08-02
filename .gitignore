@@ -1,0 +1,12 @@
+/node_modules
+/.env.local
+/.umirc.local.ts
+/config/config.local.ts
+/src/.umi
+/src/.umi-production
+/dist
+.idea/.gitignore
+.idea/modules.xml
+.idea/my-app.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
