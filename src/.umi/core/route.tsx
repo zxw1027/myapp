@@ -5,10 +5,12 @@ import React from 'react';
 
 export async function getRoutes() {
   return {
-    routes: {"index":{"path":"/","id":"index","parentId":"@@/global-layout","file":"index.tsx"},"docs":{"path":"docs","id":"docs","parentId":"@@/global-layout","file":"docs.tsx"},"@@/global-layout":{"id":"@@/global-layout","path":"/","file":"@/layouts/index.tsx","isLayout":true}},
+    routes: {"1":{"path":"/","file":"@/pages/index.tsx","parentId":"@@/global-layout","id":"1"},"2":{"path":"/posts/create","file":"@/pages/posts/create.tsx","parentId":"@@/global-layout","id":"2"},"3":{"path":"/login","file":"@/pages/login.tsx","parentId":"@@/global-layout","id":"3"},"4":{"path":"/posts/:postId","file":"@/pages/posts/post.tsx","parentId":"@@/global-layout","id":"4"},"@@/global-layout":{"id":"@@/global-layout","path":"/","file":"@/layouts/index.tsx","isLayout":true}},
     routeComponents: {
-'index': React.lazy(() => import(/* webpackChunkName: "src__pages__index" */'../../../src/pages/index.tsx')),
-'docs': React.lazy(() => import(/* webpackChunkName: "src__pages__docs" */'../../../src/pages/docs.tsx')),
+'1': React.lazy(() => import(/* webpackChunkName: "p__index" */'@/pages/index.tsx')),
+'2': React.lazy(() => import(/* webpackChunkName: "p__posts__create" */'@/pages/posts/create.tsx')),
+'3': React.lazy(() => import(/* webpackChunkName: "p__login" */'@/pages/login.tsx')),
+'4': React.lazy(() => import(/* webpackChunkName: "p__posts__post" */'@/pages/posts/post.tsx')),
 '@@/global-layout': React.lazy(() => import(/* webpackChunkName: "layouts__index" */'@/layouts/index.tsx')),
 },
   };
