@@ -2,10 +2,9 @@
   "private": true,
   "author": "zxw1027 <zhang.xiaowei23@iwhalecloud.com>",
   "scripts": {
-    "build": "prisma generate && umi build",
     "dev": "umi dev",
+    "build": "prisma generate && umi build",
     "postinstall": "umi setup",
-    "setup": "umi setup",
     "start": "npm run dev"
   },
   "dependencies": {
