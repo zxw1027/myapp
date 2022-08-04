@@ -3,6 +3,7 @@ import { history } from "umi";
 
 export default function HomePage() {
   const [posts, setPosts] = useState<any[]>();
+
   async function refresh() {
     try {
       const res = await fetch("/api/posts");
@@ -14,9 +15,11 @@ export default function HomePage() {
       console.error(err);
     }
   }
+
   useEffect(() => {
     refresh();
   }, []);
+
   return (
     <div>
       {!posts && <p>Loading...</p>}
