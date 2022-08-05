@@ -1,4 +1,4 @@
-import { signToken } from "@/utils/jwt";
+import { signToken } from "@/../../utils/jwt";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import type { UmiApiRequest, UmiApiResponse } from "umi";
@@ -19,7 +19,7 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
             // 密码是经过 bcrypt 加密的
             passwordHash: bcrypt.hashSync(req.body.password, 8),
             name: req.body.name,
-            avatarUrl: req.body.avatarUrl,
+            avatarUrl: req.body?.avatarUrl,
           },
         });
 
