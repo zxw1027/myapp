@@ -1,6 +1,6 @@
 import { UmiApiRequest, UmiApiResponse } from "umi";
 import { PrismaClient } from '@prisma/client'
-import { verifyToken } from "@/../../../utils/jwt";
+import { verifyToken } from "../../../utils/jwt";
 
 export default async function (req: UmiApiRequest, res: UmiApiResponse) {
     console.log('res',res)
