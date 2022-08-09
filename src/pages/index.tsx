@@ -21,16 +21,25 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div>
+    <div className={'m-5'}>
       {!posts && <p>Loading...</p>}
       {posts && (
-        <div>
-          {posts.map((post) => (
-            <div key={post.id}>
-              <div onClick={() => history.push(`/posts/${post.id}`)}>
-                <p>{post.title}</p>
-              </div>
-            </div>
+        <div className={'grid grid-cols-6 gap-4' }>
+          {posts.map((post,index) => (
+              <>
+                {index%2===0&&  <div key={post.id} className={'col-span-2 col-start-2 h-32 rounded-lg shadow-sm bg-amber-300 hover:bg-amber-100'}>
+                  <div onClick={() => history.push(`/posts/${post.id}`)} className={'m-2'}>
+                    <p className={'text-lg font-bold'}>{post.title}</p>
+                    <p className={'overflow-ellipsis-3'}>{post.content}</p>
+                  </div>
+                </div>}
+                {index%2===1&&  <div key={post.id} className={'col-span-2 col-start-4 h-32 rounded-lg shadow-sm bg-amber-300 hover:bg-amber-100'}>
+                  <div onClick={() => history.push(`/posts/${post.id}`)} className={'m-2'}>
+                    <p className={'text-lg font-bold'}>{post.title}</p>
+                    <p className={'overflow-ellipsis-3'}>{post.content}</p>
+                  </div>
+                </div>}
+              </>
           ))}
         </div>
       )}
